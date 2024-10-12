@@ -1,9 +1,9 @@
 import {
-	ImageBackground,
+	ImageSourcePropType,
 	StyleSheet,
 	Text,
 	TouchableOpacity,
-	ImageSourcePropType,
+	Image,
 } from 'react-native';
 
 interface CalculatorCardProps {
@@ -14,10 +14,9 @@ interface CalculatorCardProps {
 
 const CalculatorCard = ({ title, image, onPress }: CalculatorCardProps) => {
 	return (
-		<TouchableOpacity onPress={onPress}>
-			<ImageBackground source={image} style={styles.container} resizeMode="cover">
-				<Text style={styles.title}>{title}</Text>
-			</ImageBackground>
+		<TouchableOpacity style={styles.container} onPress={onPress}>
+			<Image source={image} style={styles.image} />
+			<Text style={styles.title}>{title}</Text>
 		</TouchableOpacity>
 	);
 };
@@ -26,19 +25,18 @@ export default CalculatorCard;
 
 const styles = StyleSheet.create({
 	container: {
-		width: 150,
-		height: 150,
-		justifyContent: 'center',
-		alignItems: 'center',
+		backgroundColor: '#151B23',
+		padding: 20,
 		borderRadius: 10,
-		overflow: 'hidden',
+		alignItems: 'center',
+	},
+	image: {
+		width: 100,
+		height: 100,
 	},
 	title: {
 		fontSize: 18,
 		fontWeight: 'bold',
 		color: '#fff',
-		textShadowColor: 'rgba(0, 0, 0, 0.75)',
-		textShadowOffset: { width: -1, height: 1 },
-		textShadowRadius: 10,
 	},
 });
