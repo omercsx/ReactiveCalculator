@@ -1,5 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Image } from 'react-native';
+import logo from '../../assets/reactive.webp'
 
 import Home from '../Screens/Home';
 
@@ -11,10 +13,18 @@ const Navigation = () => {
 	return (
 		<NavigationContainer>
 			<Stack.Navigator>
-				<Stack.Screen name='Home' component={Home} />
+				<Stack.Screen
+					name='Home'
+					component={Home}
+					options={{ header: () => <HomeHeader /> }}
+				/>
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
+};
+
+const HomeHeader = () => {
+	return <Image source={require('../assets/images/logo.png')} />;
 };
 
 export default Navigation;
