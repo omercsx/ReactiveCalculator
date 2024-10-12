@@ -1,7 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Image } from 'react-native';
-import logo from '../../assets/reactive.webp'
+import HomeHeader from '../components/HomeHeader';
 
 import Home from '../Screens/Home';
 
@@ -23,8 +22,6 @@ const Navigation = () => {
 	);
 };
 
-const HomeHeader = () => {
-	return <Image source={require('../assets/images/logo.png')} />;
-};
+
 
 export default Navigation;
