@@ -3,6 +3,7 @@ import type { RouteProp } from '@react-navigation/native';
 
 export type RootNavigatorParamList = {
 	Home: undefined;
+	Calculator: undefined;
 	Auth: undefined;
 };
 
@@ -13,4 +14,5 @@ export type RootNavigatorRouteProps<T extends keyof RootNavigatorParamList> =
 
 export type RootStackParamList = {
 	Home: undefined;
+	Calculator: undefined;
 };

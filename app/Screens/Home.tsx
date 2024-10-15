@@ -10,28 +10,12 @@ const Home = () => {
 		<View style={styles.container}>
 			<Text style={styles.title}>Welcome to Reactive Calculator!</Text>
 			<View style={styles.cardContainer}>
-				<CalculatorCard
-					title='BMI Calculator'
-					image={bmiCalculator}
-					onPress={() => {}}
-				/>
-				<CalculatorCard
-					title='Age Calculator'
-					image={ageCalculator}
-					onPress={() => {}}
-				/>
+				<CalculatorCard title='BMI Calculator' image={bmiCalculator} />
+				<CalculatorCard title='Age Calculator' image={ageCalculator} />
 			</View>
 			<View style={styles.cardContainer}>
-				<CalculatorCard
-					title='Gravity Calculator'
-					image={gravityCalculator}
-					onPress={() => {}}
-				/>
-				<CalculatorCard
-					title='Calculator'
-					image={calculator}
-					onPress={() => {}}
-				/>
+				<CalculatorCard title='Gravity Calculator' image={gravityCalculator} />
+				<CalculatorCard title='Calculator' image={calculator} />
 			</View>
 		</View>
 	);

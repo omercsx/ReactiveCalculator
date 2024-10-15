@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import {
 	ImageSourcePropType,
 	StyleSheet,
@@ -9,12 +10,18 @@ import {
 interface CalculatorCardProps {
 	title: string;
 	image: ImageSourcePropType;
-	onPress: () => void;
+
 }
 
-const CalculatorCard = ({ title, image, onPress }: CalculatorCardProps) => {
+const CalculatorCard = ({ title, image }: CalculatorCardProps) => {
+	const navigation = useNavigation<any>();
+
+	const handlePress = () => {
+		navigation.navigate(title);
+	};
+
 	return (
-		<TouchableOpacity style={styles.container} onPress={onPress}>
+		<TouchableOpacity style={styles.container} onPress={handlePress}>
 			<Image source={image} style={styles.image} />
 			<Text style={styles.title}>{title}</Text>
 		</TouchableOpacity>
