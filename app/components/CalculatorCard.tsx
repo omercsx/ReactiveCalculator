@@ -1,49 +1,42 @@
-import { useNavigation } from '@react-navigation/native';
-import {
-	ImageSourcePropType,
-	StyleSheet,
-	Text,
-	TouchableOpacity,
-	Image,
-} from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, Image, ImageSourcePropType } from 'react-native';
 
 interface CalculatorCardProps {
-	title: string;
-	image: ImageSourcePropType;
-
+  title: string;
+  image: ImageSourcePropType;
+  onPress?: () => void;
 }
 
-const CalculatorCard = ({ title, image }: CalculatorCardProps) => {
-	const navigation = useNavigation<any>();
-
-	const handlePress = () => {
-		navigation.navigate(title);
-	};
-
-	return (
-		<TouchableOpacity style={styles.container} onPress={handlePress}>
-			<Image source={image} style={styles.image} />
-			<Text style={styles.title}>{title}</Text>
-		</TouchableOpacity>
-	);
+const CalculatorCard = ({ title, image, onPress }: CalculatorCardProps) => {
+  return (
+    <TouchableOpacity style={styles.container} onPress={onPress}>
+      <Image source={image} style={styles.image} />
+      <Text style={styles.title}>{title}</Text>
+    </TouchableOpacity>
+  );
 };
 
 export default CalculatorCard;
 
 const styles = StyleSheet.create({
-	container: {
-		backgroundColor: '#151B23',
-		padding: 20,
-		borderRadius: 10,
-		alignItems: 'center',
-	},
-	image: {
-		width: 100,
-		height: 100,
-	},
-	title: {
-		fontSize: 18,
-		fontWeight: 'bold',
-		color: '#fff',
-	},
+  container: {
+    flex: 1,
+    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    borderRadius: 10,
+    padding: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    aspectRatio: 1,
+  },
+  image: {
+    width: '80%',
+    height: '80%',
+    resizeMode: 'contain',
+    marginBottom: 10,
+  },
+  title: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    color: '#ffffff',
+    textAlign: 'center',
+  },
 });
